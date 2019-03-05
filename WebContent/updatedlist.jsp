@@ -8,8 +8,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-BOOKED SUCCESSFULLY
+
+BOOKED SUCCESSFULLY<br>
+<br>
 <a href ="studentview.jsp">
 <button type="submit">back</button></a>
+
+<div style="text-align:center; padding-top:300px ">
+<h3>Due date:${DATE}</h3>
+</div>
 </body>
 </html>

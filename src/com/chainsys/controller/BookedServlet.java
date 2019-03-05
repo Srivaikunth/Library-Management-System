@@ -2,6 +2,7 @@ package com.chainsys.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -23,11 +24,13 @@ public class BookedServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		int isbn = Integer.parseInt(request.getParameter("book"));
-		
+		int count=7;
+		LocalDate date=LocalDate.now().plusDays(count);
 		BookDAO bookDAO = new BookDAO();
 		
 		try {
 			bookDAO.findByisbn(isbn);
+			request.setAttribute("DATE", date);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("updatedlist.jsp");
 			dispatcher.forward(request,response);
 		} catch (SQLException e) {
