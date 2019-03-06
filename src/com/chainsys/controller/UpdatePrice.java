@@ -3,7 +3,6 @@ package com.chainsys.controller;
 import java.io.IOException;
 import java.sql.SQLException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,9 +13,9 @@ import com.chainsys.controller.dao.BookDAO;
 import com.chainsys.controller.model.Book;
 
 /**
- * Servlet implementation class UpdatePrice
+ * Servlet implementation class UpdatePriced
  */
-@WebServlet("/UpdatePrice")
+@WebServlet("/UpdatePriced")
 public class UpdatePrice extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -25,7 +24,7 @@ public class UpdatePrice extends HttpServlet {
      */
     public UpdatePrice() {
         super();
-        
+        // TODO Auto-generated constructor stub
     }
 
 	/**
