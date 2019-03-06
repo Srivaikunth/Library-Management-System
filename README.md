@@ -16,6 +16,7 @@ Use case in student page
 Registration
 Login
 Change password
+New user
 Updating password by name
 List the books available in library
 Status(if the student took the book status will assigned as 0 and if another student logged in list of books displayed where status=1)
