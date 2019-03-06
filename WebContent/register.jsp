@@ -8,8 +8,13 @@
 </head>
 <style>
 body {
+	
+	background:url("Welcome.jpg");
+	background-repeat:no-repeat;
+	background-size:100%;
 	text-align: center;
 	padding-top: 230px;
+	font-size:24px;
 }
 
 form {
