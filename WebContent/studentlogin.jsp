@@ -39,7 +39,9 @@ form {
 <tr>
 <td>
 <button type="submit">Login</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</td><td><a href ="forgetpassword.jsp">Forget Password</a>
+</td><td><a href ="forgetpassword.jsp">Forget Password</a>&nbsp;&nbsp;&nbsp;&nbsp;
+</td><td><a href ="register.jsp">New User</a>
+
 
 </tr>
 <tr><td>${status}</td></tr>

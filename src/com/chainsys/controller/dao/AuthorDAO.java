@@ -18,7 +18,6 @@ public class AuthorDAO {
 		PreparedStatement preparedStatement = connection.prepareStatement(sql);
 		preparedStatement.setString(1, author.getName());
 		preparedStatement.executeUpdate();
-		// System.out.println("Rows inserted " + rows);
 		ConnectionUtil.close(connection,preparedStatement,null);
 	}
 

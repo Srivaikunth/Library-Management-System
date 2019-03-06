@@ -41,7 +41,7 @@
 					<td>${book.getAuthor().getName()}</td>
 					<td>${book.getPublication().getId()}</td>
 					<td>${book.getPublication().getName()}</td>
-					<td><button type ="submit" name="book" value="${book.isbn}">book</button>
+					<td><button type ="submit" name="book" value="${book.isbn}">GetBook</button>
 				   
 					
 				</tr>
