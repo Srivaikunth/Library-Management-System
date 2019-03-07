@@ -1,7 +1,7 @@
 Create table student(
 student_id number(10),
 student_name varchar2(40) not null,
-phone_number number(10) not null,
+phone_number number(10) constraint chk_std_phone check(phone_number not like '%[^0-9]%'),
 address varchar2(30) not null,
 password varchar2(20) not null);
 
@@ -51,15 +51,20 @@ start with 1
 increment by 1;
 
 Create table admin(
+id number(10),
 username varchar2(25),
-password varchar2(20)
+password varchar2(20), constraint pk_admin_id primary key(id)
 );
 
-insert into admin values('vaikunth','siddharth');
-
+insert into admin values(101,'vaikunth','siddharth');
+insert into admin values(102,'siddharth','vaikunth');
+commit;
 select * from author;
 select * from book_details;
 select * from student;
+select* from admin;
+
+
 
 
 alter table book_details add status int;
@@ -67,10 +72,9 @@ update book_details set status=1;
 
 commit;
 
-
-
-
+drop table admin;
 drop table book_details;
 drop table author;
 drop table publication;
 drop table student;
+

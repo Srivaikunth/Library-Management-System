@@ -36,7 +36,7 @@ form {
 			<tr>
 			<td align = "left">Phonenumber:</td>
 		
-			<td>	<input type="number" name="phone_number"></td>
+			<td>	<input type="number" maxlength="10" name="phone_number" onkeypress='return event.charCode>=48 && event.charCode<=57'></td>
 			</tr>
 			
 			<tr>

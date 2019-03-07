@@ -40,8 +40,8 @@ public class LoginServlet extends HttpServlet {
 		LoginDAO loginDAO = new LoginDAO();
 		try {
 			logindet.add(login);
-			if (loginDAO.checkLogin(login).equals(true)) {
-				
+			boolean active=loginDAO.checkLogin(login);
+			if (active) {
 				RequestDispatcher rdDispatcher = request
 						.getRequestDispatcher("home.jsp");
 				rdDispatcher.forward(request, response);
