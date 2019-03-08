@@ -10,7 +10,7 @@ import com.chainsys.controller.model.Author;
 import com.chainsys.controller.util.ConnectionUtil;
 
 public class AuthorDAO {
-
+      
 	public void addAuthor(Author author) throws SQLException {
 
 		Connection connection = ConnectionUtil.getConnection();
@@ -18,9 +18,9 @@ public class AuthorDAO {
 		PreparedStatement preparedStatement = connection.prepareStatement(sql);
 		preparedStatement.setString(1, author.getName());
 		preparedStatement.executeUpdate();
-		ConnectionUtil.close(connection,preparedStatement,null);
+		ConnectionUtil.close(connection, preparedStatement, null);
 	}
-
+      
 	public Author findByAuthor(Author author) throws SQLException {
 		Connection connection = ConnectionUtil.getConnection();
 		String sql = "select author_id,author_name from author where author_name=? ";
@@ -34,7 +34,7 @@ public class AuthorDAO {
 			author1.setName(resultset.getString("name"));
 
 		}
-		ConnectionUtil.close(connection,preparedStatement,resultset);
+		ConnectionUtil.close(connection, preparedStatement, resultset);
 		return author1;
 
 	}
@@ -45,24 +45,23 @@ public class AuthorDAO {
 		PreparedStatement preparedStatement = connection.prepareStatement(sql);
 		preparedStatement.setInt(1, id);
 		ResultSet resultset = preparedStatement.executeQuery();
-		Author author2=new Author();
+		Author author2 = new Author();
 		if (resultset.next()) {
 			author2 = new Author();
 			author2.setId(resultset.getInt("author_id"));
 			author2.setName(resultset.getString("author_name"));
 
 		}
-		ConnectionUtil.close(connection,preparedStatement,resultset);
-		
+		ConnectionUtil.close(connection, preparedStatement, resultset);
+
 		return author2;
 	}
 
 	public ArrayList<Author> findAll() throws SQLException {
 		ArrayList<Author> authorlist = new ArrayList<Author>();
-		
 
 		Connection connection = ConnectionUtil.getConnection();
-		
+
 		String sql = "select author_id,author_name from author";
 		PreparedStatement preparedStatement = connection.prepareStatement(sql);
 		ResultSet resultset = preparedStatement.executeQuery();
@@ -77,10 +76,10 @@ public class AuthorDAO {
 			authorlist.add(author3);
 
 		}
-		
-		ConnectionUtil.close(connection,preparedStatement,resultset);
-		
+
+		ConnectionUtil.close(connection, preparedStatement, resultset);
+
 		return authorlist;
 	}
-	
+
 }

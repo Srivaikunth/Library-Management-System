@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import com.chainsys.controller.model.Login;
 import com.chainsys.controller.util.ConnectionUtil;
 
+
 public class LoginDAO {
 	public Boolean checkLogin(Login adminLogin) throws SQLException {
 		boolean isActive=false;
